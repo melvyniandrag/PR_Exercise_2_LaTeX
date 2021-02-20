@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+
+% Font and color stuff for text
+\usepackage{xcolor}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+% Paragraph formatting
+\setlength{\parindent}{0pt} 
+\setlength{\parskip}{0.125cm} 
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+% Checkboxes
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+
+% A macro used to make the What I Know Section look "good"
+\newcommand{\iknow}[2]{\par\textbf{#1} \textit{#2}}
+
+\title{A Short Report About What I Know}
+\author{ Trevlon Hamer }
+\date{\today}
+
+\begin{document}
+\maketitle	
+
+\section*{How to complete this assignment}
+\begin{todolist}
+    \item On a debian 10 droplet:
+    \begin{verbatim}
+        apt update
+        apt install git
+        apt install texlive-full
+    \end{verbatim}
+    \item If the droplet is new, you'll need to configure git again.
+    \item Fork the repo
+    \item Clone your fork to your machine ( use https or ssh, whichever one you like better )
+    \item if the droplet is new and you want to use ssh, you'll need to generate a new key pair
+    \item In the repo, create a directory called YourName
+    \item Copy the MyReport.tex file into your directory.
+    \item Use vim to fill out the "to do"s in the "What I Know" section.
+    \item Change "Author" to your name.
+    \item Compile using
+    \begin{verbatim}
+        pdflatex MyReport.tex
+    \end{verbatim}
+    \item If all goes well, you will see a "MyReport.pdf" in the directory!
+    \item \textcolor{red}{ git add MyReport.tex}
+    \item {\Large\textcolor{red}{ DO NOT git add -A or git add MyReport.pdf!}}
+    \item {\LARGE\textcolor{red}{ DO NOT git add -A or git add MyReport.pdf!}}
+    \item I don't want your pdf going onto github, only your .tex  file
+    \item Make a pull request
+    \item Use sftp to get your pdf to your home computer
+    \item Submit the pdf on blackboard
+    \item 50 pts for successful PR
+    \item 50 pts for PDF
+\end{todolist}
+
+\section*{What I Know}
+
+\noindent\textit{Below is a list of a few commands I know, along with brief descriptions of what they do.}
+\iknow{cp}{This command is for copying files}
+\iknow{cp -r}{this is for copying directories}
+\iknow{mv}{this is for renaming files}
+\iknow{rm}{this is for deleting files}
+\iknow{rm -r}{this is for deleting files and directories}
+\iknow{ls -a}{this is for listing all files including hidden files}
+\iknow{ls -al}{this is for listing all files and sub directories including hidden ones}
+\iknow{ls -l}{list files and directories in a long format}
+\iknow{ssh}{secure shell}
+\iknow{ssh-keygen}{this is to generate a ssh key}
+\iknow{cd}{this is to change your directory}
+\iknow{cd ../}{this is to go back one directory}
+\iknow{cd \textasciitilde}{this is to change your current directory to textasciitilde}
+\iknow{echo}{this is to display lines of text and string that are passed as arguments}
+\iknow{cat}{this is used to display the contents of a file}
+\iknow{adduser}{this is used to add a new user}
+\iknow{deluser}{this is used to delete a user}
+\iknow{chmod}{this is used to set permissions}
+\iknow{chown}{this is used to change ownership of a file}
+
+\section*{Conclusion}
+Now you know a tiny bit about using \LaTeX to prepare documents! One thing cool about \LaTeX is that you make beautiful math equations
+
+\begin{equation}
+\int_{0}^{\pi}x^2\,dx
+\end{equation}
+
+and there are ways to put images in your documents, and code snippets, and you can produce really beautifully formatted PDFs. The lecture notes for this class were all made on an Ubuntu laptop, with vim, in the terminal. And I daresay they are way more beautiful that what could have been easily made with Microsoft Word.
+
+\end{document}
